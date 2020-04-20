@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vendeur</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+		.navbar {
+			margin-bottom: 0;
+      		border-radius: 0;
+    	}
+	    #myNavbar ul{
+	      margin:0;
+	      padding:0;
+	    }
+	    #myNavbar li{
+	      list-style:none;
+	      float:left;
+	    }
+	    #myNavbar ul li a{
+	      text-decoration:none;
+	      width:150px;
+	      height:30px;
+	      display:block;
+	      text-align:center; 
+	    }
+	    #myNavbar ul ul{
+	      position:absolute;
+	      top:30px;
+	      visibility:hidden;
+	    }
+	    #myNavbar ul li:hover ul{
+	      visibility:visible;
+	      color:black;
+	      background:white;
+	    }      	
+    	.navbar-brand img {
+    		width:5px;
+    		height:5px;
+    	}
+		.header {
+			background-color:lavenderblush; 
+			text-align:center;
+		}
+		body {
+ 			background-color: lavender;
+ 			color: black;
+ 		}
+ 		.features {
+ 			background-color: lavenderblush;
+			margin: 4em auto;
+			padding: 1em;
+			position: relative;
+		}
+		.form-group {
+			margin:10px 0px 10px 0px;
+		}
+		.form-group input{
+			height:30px;
+			width:93%;
+			padding:5px 10px;
+			font-size: 16px;
+			border-radius:5px;
+			border: 1px solid gray;
+		}
+		.btn{
+			padding:10px;
+			font-size:15px;
+			background: lavender;
+			border: grey;
+			border-radius:5px;
+		}
+ 		footer {
+		    background-color: black;
+		    padding-bottom:2px;
+
+    	}
+    	.page-footer {
+		    background-color: red;
+		    color: #ccc;
+		    padding: 60px 0 30px;
+  		}
+  		.footer-copyright {
+		    color: #666;
+		    padding: 40px 0;
+		}
+    </style>
+</head>
+<body>
+	<form action="Signupvendeur.php" method="post">
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>                        
+      			</button>
+      			<a class="navbar-brand"><br><a class="active" href="home.html"><img src="logo.jpg" class="img-circle" alt="image"></a></a>
+    		</div>
+    		<div class="collapse navbar-collapse" id="myNavbar">
+    			<ul class="nav navbar-nav">
+    				<li><a href="#">Catégories</a>
+        		<ul>
+            		<li><a href='cat1.php'> Ferraille ou Trésor</a></li>
+            		<li><a href='cat2.php'> Bon pour le Musée</a></li>
+            		<li><a href='cat3.php'> Accessoire VIP</a></li> 
+        		</ul> </li>       
+       			 <li><a href="Apropos.html">A propos</a></li>
+       			 <li><a href="Loginvendeur.html">Vendre</a></li>
+      			</ul>
+      			<ul class="nav navbar-nav navbar-right">
+      			 <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        		 <li><a href="panier.php"><span class="glyphicon glyphicon-shopping-cart"></span> Panier</a></li>
+       			<li><a href="connexionadmin.html"><span class="glyphicon glyphicon-user"></span> Admin</a></li>
+      			</ul>
+    			</div>
+  </div>
+</nav>
+<header class="page-header header container-fluid">
+		<div class="overlay"></div>
+		<div class="overlay"></div>
+		<div class="description">
+ 		<h1>Bienvenue dans EbayEce</h1><br>
+ 		<h3>Vous pouvez vous connecter ou créer votre compte en un seul clic</h3><br>
+	</header>
+	<div class="container features">	
+ 		<div class="row">
+ 			<div class="col-lg-6 col-md-6 col-sm-5">
+ 				<h3 class="feature-title">Inscrivez-vous</h3>
+					<div class="form-group">
+						<p>Nom</p>
+						<input type="text" name="name">
+					</div>
+					<div class="form-group">
+						<p> Pseudo</p>
+ 						<input type="texte" name="pseudo">
+					</div>
+					<div class="form-group">
+						<p>Email</p>
+ 						<input type="texte" name="mail">
+					</div>
+					<div class="input-group">
+						<p>Photo </p>
+ 						<input type="file" name="photo">
+					</div>
+					<div class="input-group">
+						<p>Image de fond</p>
+ 						<input type="file" name="imagedefond">
+					</div>
+					<p></p>
+					<div class="input-group">
+						<td colspan="2" align="center">
+						<input type="submit" value="S'inscrire" name="button2" class="btn"></td>
+					</div>
+					<p> Vous avez déjà un compte en tant que vendeur? Connectez-vous directement<a href="Loginvendeur.html"> ici</a>!</p>
+ 			</div>
+		</div>
+	</div>
+
+</body>			
+<footer class="container-fluid text-center">
+	<div class="footer-copyright text-center">Conditions générales | &copy; 2020 Copyright EbayECE | Tous droits réservés.</div>
+</footer>
+	</form>
+</body>
+</html>

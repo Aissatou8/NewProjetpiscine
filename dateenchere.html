@@ -1,0 +1,36 @@
+<div id="affiche">Temps avant fin des enchères.</div>
+ 
+<script type="text/javascript">
+var finTemps = 1282954170; // < ?php echo $donnees['finEnchere']; ? >  <?php mktime(13, 25, 00, 01, 04, 2020) ?>;
+var timestampActuel = <?php echo time(); ?>; // donne le timestamp actuel
+var duree = finTemps - timestampActuel; // durée = temps total - temps actuel
+var dureeHeure, dureeMinute, dureeSeconde; // initialise variable, pour qu'elles ne soient pas global
+var div = document.getElementById("affiche"); // récupère la div affiche
+ 
+// fait un interval régulier de 1s
+var timer = setInterval(function(){
+                                  
+        // boucle tant que la durée est supérieur à 0
+        if(duree>0)
+        {
+            dureeHeure = parseInt(duree/3600);
+            dureeMinute = parseInt((duree-(dureeHeure*3600))/60);
+            dureeSeconde = duree-((dureeHeure*3600)+(dureeMinute*60));
+            var old_contenu = div.firstChild; // récup le premier enfant (le texte)
+            div.removeChild(old_contenu); // supprime l'ancien contenu
+            var texte = document.createTextNode(dureeHeure+":"+dureeMinute+":"+dureeSeconde); // crée un node texte valeur de la durée
+            div.appendChild(texte); // affiche le node
+             
+            duree -= 1; // diminue la durée de l'enchère
+        }
+        // si l'enchère est finis
+        else
+        {
+            var old_contenu = div.firstChild;
+            div.removeChild(old_contenu); // supprime le contenu
+            var texte = document.createTextNode('Enchère finis !'); // affiche message de fin, voir une alert
+            div.appendChild(texte);
+            clearInterval(timer); // interrompt la boucle de setInterval
+        }
+    }, 1000); // 1000ms
+</script>
